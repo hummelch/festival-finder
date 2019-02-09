@@ -1,0 +1,63 @@
+<template>
+  <v-app>
+    <v-navigation-drawer
+        fixed
+        v-model="drawer"
+        app
+      >
+      <filter-navigation></filter-navigation>
+  </v-navigation-drawer>
+    <v-toolbar color="indigo" dark fixed app>
+        <v-toolbar-side-icon class="hidden-lg-and-up" @click.stop="drawer = !drawer" ></v-toolbar-side-icon>
+        <v-btn icon>
+          <v-icon>arrow_back</v-icon>
+        </v-btn>
+    </v-toolbar>
+    <v-content>
+      <v-container fluid>
+        <router-view></router-view>
+      </v-container>
+    </v-content>
+    <v-footer app>123</v-footer>
+</v-app>
+</template>
+
+<style lang="scss">
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+#nav {
+  padding: 30px;
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+</style>
+<script>
+// @ is an alias to /src
+import FilterNavigation from '@/components/FilterNavigation.vue';
+
+export default {
+  name: 'app',
+  components: {
+    FilterNavigation,
+  },
+  data: () => ({
+    genresItems: ['Metal', 'Rock', 'Pop', 'Rap'],
+    genresValues: [],
+    sizeItems: ['bis 5.000', '5.000 - 10.000', '10.001 - 20.000', '20.001 - 30.000', '30.001 - 40.000', '20.001 - 30.000'],
+    text: 'list',
+    drawer: null,
+    options: {},
+    isDetail: true,
+  }),
+};
+</script>
