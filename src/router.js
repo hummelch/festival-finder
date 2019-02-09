@@ -35,7 +35,7 @@ export default new Router({
       component: MapResult,
     },
     {
-      path: '/detail',
+      path: '/detail/:name',
       name: 'detail',
       component: ResultDetail,
     },

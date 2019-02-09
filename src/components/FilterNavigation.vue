@@ -1,5 +1,5 @@
 <template>
-<div>
+  <div>
     <h1 class="text-xs-center mt-4 mb-4">Suche</h1>
       <v-list two-line subheader>
         <div class="text-xs-center mb-4">
@@ -29,16 +29,21 @@
 
         <v-btn color="primary" dark large>Suchen (45)</v-btn>
       </v-list>
-</div>
+  </div>
 </template>
 <script>
 
 export default {
   name: 'filterNavigation',
 
-  data () {
-    return {
-    };
-  }
+  data: () => ({
+    genresItems: ['Metal', 'Rock', 'Pop', 'Rap', 'Alternative'],
+    genresValues: [],
+    sizeItems: ['bis 5.000', '5.000 - 10.000', '10.001 - 20.000', '20.001 - 30.000', '30.001 - 40.000', '20.001 - 30.000'],
+    text: 'list',
+    drawer: null,
+    options: {},
+    isDetail: true,
+  }),
 };
 </script>

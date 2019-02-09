@@ -1,24 +1,37 @@
 <template>
   <v-app>
     <v-navigation-drawer
-        fixed
-        v-model="drawer"
-        app
-      >
+      fixed
+      v-model="drawer"
+      app
+    >
       <filter-navigation></filter-navigation>
-  </v-navigation-drawer>
+    </v-navigation-drawer>
     <v-toolbar color="indigo" dark fixed app>
-        <v-toolbar-side-icon class="hidden-lg-and-up" @click.stop="drawer = !drawer" ></v-toolbar-side-icon>
-        <v-btn icon>
-          <v-icon>arrow_back</v-icon>
+      <v-toolbar-side-icon class="hidden-lg-and-up" @click.stop="drawer = !drawer">
+      </v-toolbar-side-icon>
+      <v-btn icon @click="$router.go(-1)" v-if="$route.name === 'detail'">
+        <v-icon>arrow_back</v-icon>
+      </v-btn>
+      <v-spacer></v-spacer>
+      <v-menu bottom left>
+        <v-btn>
+          <v-icon>search</v-icon>
         </v-btn>
+        <v-list>
+          <v-list-tile>EN</v-list-tile>
+        </v-list>
+      </v-menu>
     </v-toolbar>
     <v-content>
       <v-container fluid>
         <router-view></router-view>
       </v-container>
     </v-content>
-    <v-footer app>123</v-footer>
+    <v-footer app>
+      Home
+      Impressum
+    </v-footer>
 </v-app>
 </template>
 
