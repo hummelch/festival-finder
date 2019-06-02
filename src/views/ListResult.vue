@@ -32,6 +32,8 @@
       v-model="page"
       :length="6"
     ></v-pagination>
+    <div>Bands {{ $route.params.bands }}</div>
+    <div>Genre {{ $route.params.genre }}</div>
   </div>
 </template>
 
@@ -81,6 +83,12 @@ export default {
         },
       ],
     };
+  },
+  props: {
+    bands: {
+      type: Array,
+      default: null,
+    },
   },
 };
 </script>

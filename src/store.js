@@ -9,14 +9,16 @@ Vue.use(VueAxios, axios)
 
 export default (config) => new Vuex.Store({
   state: {
-     componentList: [],
-     selectedGrid: 12,
-     componentDetails: {}
+     selectedFilters: {
+       genre: [],
+       bands: [],
+       dateRange: '',
+     },
   },
 
   getters: {
-    getComponentList: (state) => {
-      return state.componentList
+    getSelectedFilters: (state) => {
+      return state.selectedFilters;
     },
     getComponentByName: (state) => (name) => {
       return state.componentDetails[name];
@@ -26,8 +28,8 @@ export default (config) => new Vuex.Store({
     }
   },
   mutations: {
-    setComponentList (state, list) {
-      state.componentList = list;
+    setSelectedFilters (state, selectedFilters) {
+      state.selectedFilters = selectedFilters;
     },
     setSelectedGrid (state, grid) {
       state.selectedGrid = grid;
@@ -40,8 +42,8 @@ export default (config) => new Vuex.Store({
     }
   },
   actions: {
-    loadSelectedGrid ({ commit }, grid) {
-      commit('setSelectedGrid', grid);
+    loadSelectedFilters ({ commit }, grid) {
+      commit('setSelectedFilters ', grid);
     },
     loadComponentList ({ commit }) {
       axios

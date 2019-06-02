@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Festival Name",
+        "genre": ["Metal"],
+        "dateStart": "2019-08-01",
+        "dateEnd": "2019-08-03",
+        "zip": "12345",
+        "city": "Berlin",
+        "size": "100000",
+        "price": "100",
+        "description":"",
+        "bands": ["The Wombats", "Metalica"]
+    }
+]

@@ -20,9 +20,9 @@ export default new Router({
       component: Home,
     },
     {
-      path: '/list',
+      path: '/list/:bands/:genre',
       name: 'list',
-      component: ListResult,
+      component: ListResult
     },
     {
       path: '/calendar',
