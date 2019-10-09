@@ -22,7 +22,7 @@ export default new Router({
     {
       path: '/list/:bands/:genre',
       name: 'list',
-      component: ListResult
+      component: ListResult,
     },
     {
       path: '/calendar',

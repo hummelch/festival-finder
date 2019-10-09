@@ -19,9 +19,9 @@ export default {
   name: 'map',
   components: {
   },
-  data () {
+  data() {
     return {
     };
-  }
+  },
 };
 </script>

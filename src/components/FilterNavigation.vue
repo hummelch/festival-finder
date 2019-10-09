@@ -47,14 +47,14 @@ export default {
     genresItems: ['Metal', 'Rock', 'Pop', 'Rap', 'Alternative'],
     genresValues: [],
     sizeItems: ['bis 5.000', '5.000 - 10.000', '10.001 - 20.000', '20.001 - 30.000', '30.001 - 40.000', '20.001 - 30.000'],
-    bands: ['The Wombats', "Cage the Elefant", "System of a Down"],
+    bands: ['The Wombats', 'Cage the Elefant', 'System of a Down'],
     text: 'list',
     drawer: null,
     options: {},
     isDetail: true,
   }),
   methods: {
-    setGrid: function (grid) {
+    setGrid: (grid) => {
       if (this.canBeUsedinGrid(grid)) {
         this.isSelected = grid;
         this.$store.dispatch('loadSelectedGrid', grid);
