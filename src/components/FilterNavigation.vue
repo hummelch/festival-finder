@@ -15,8 +15,9 @@
           :items="genresItems"
           chips
           label="Chips"
-          multiple
+          :multiple="true"
           solo
+          @change="updateGenres()"
         ></v-select>
 
         <v-select
@@ -30,11 +31,11 @@
           v-model="model"
           :items="bands"
           label="Bands"
-          multiple="true"
+          :multiple="true"
         ></v-autocomplete>
 
 
-        <v-btn color="primary" dark large>Suchen (45)</v-btn>
+        <v-btn color="primary" dark large @click="syncFiltersToUrl()">Suchen (45)</v-btn>
       </v-list>
   </div>
 </template>
@@ -52,13 +53,27 @@ export default {
     drawer: null,
     options: {},
     isDetail: true,
+    model: '',
   }),
+  mounted() {
+    this.genresValues = this.$route.query.genre.split(',').map(String);
+  },
   methods: {
-    setGrid: (grid) => {
+    setGrid(grid) {
       if (this.canBeUsedinGrid(grid)) {
         this.isSelected = grid;
         this.$store.dispatch('loadSelectedGrid', grid);
       }
+    },
+    updateGenres() {
+      console.log('huhu');
+    },
+    syncFiltersToUrl() {
+      this.$router.push({
+        query: {
+          genre: this.genresValues.join(','),
+        },
+      });
     },
   },
 };

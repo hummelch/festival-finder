@@ -42,6 +42,14 @@ export default (config) => new Vuex.Store({
     }
   },
   actions: {
+    loadFilters ({ commit }) {
+      axios
+        .get(`http://localhost:3000/filters`)
+        .then(r => r.data)
+        .then(detail => {
+        commit('setFilters', {detail, componentName});
+      })
+    },
     loadSelectedFilters ({ commit }, grid) {
       commit('setSelectedFilters ', grid);
     },

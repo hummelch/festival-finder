@@ -5,5 +5,8 @@
 <script>
 export default {
   name: 'calendarResult',
+  created() {
+
+  },
 };
 </script>
