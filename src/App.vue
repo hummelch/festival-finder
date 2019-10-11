@@ -57,16 +57,18 @@
 <script>
 // @ is an alias to /src
 import FilterNavigation from '@/components/FilterNavigation.vue';
+import store from '@/store.js';
 
 export default {
   name: 'app',
   components: {
     FilterNavigation,
   },
+  created() {
+    console.log(this);
+    this.store.action.loadFilters();
+  },
   data: () => ({
-    genresItems: ['Metal', 'Rock', 'Pop', 'Rap'],
-    genresValues: [],
-    sizeItems: ['bis 5.000', '5.000 - 10.000', '10.001 - 20.000', '20.001 - 30.000', '30.001 - 40.000', '20.001 - 30.000'],
     text: 'list',
     drawer: null,
     options: {},
