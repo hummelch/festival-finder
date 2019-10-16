@@ -57,7 +57,6 @@
 <script>
 // @ is an alias to /src
 import FilterNavigation from '@/components/FilterNavigation.vue';
-import store from '@/store.js';
 
 export default {
   name: 'app',
@@ -65,8 +64,6 @@ export default {
     FilterNavigation,
   },
   created() {
-    console.log(this);
-    this.store.action.loadFilters();
   },
   data: () => ({
     text: 'list',

@@ -16,7 +16,7 @@
 <script>
 
 export default {
-  name: 'map',
+  name: 'mapResult',
   components: {
   },
   data() {
